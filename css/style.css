@@ -420,8 +420,11 @@ main h2 {
   display: inline-block;
   font-size: var(--fs-xl);
   letter-spacing: var(--ls-base);
-  margin-bottom: 4rem;
   color: var(--c-text);
+}
+
+section:not(#thanks) h2 {
+  margin-bottom: 4rem;
   position: relative;
   opacity: 0;
   translate: 0 0.4rem;
@@ -430,47 +433,47 @@ main h2 {
   @media (max-width: 768px) {
     margin-bottom: 2rem;
   }
-}
 
-main h2.is-visible {
-  opacity: 1;
-  translate: 0 0;
-}
-
-@keyframes blink-anime {
-  0% {
+  &.is-visible {
     opacity: 1;
+    translate: 0 0;
   }
 
-  25% {
-    opacity: 0;
+  @keyframes blink-anime {
+    0% {
+      opacity: 1;
+    }
+
+    25% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 
-  50% {
-    opacity: 1;
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0.55em;
+    height: 0.1rem;
+    background: currentColor;
+    margin-left: 0.15em;
+    vertical-align: baseline;
   }
 
-  75% {
-    opacity: 0;
+  &.is-visible::after {
+    animation: blink-anime 1.4s 0.3s step-end forwards;
   }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-main h2::after {
-  content: '';
-  display: inline-block;
-  width: 0.55em;
-  height: 0.1rem;
-  background: currentColor;
-  margin-left: 0.15em;
-  vertical-align: baseline;
-}
-
-main h2.is-visible::after {
-  animation: blink-anime 1.4s 0.3s step-end forwards;
 }
 
 /* --------------- hero --------------- */

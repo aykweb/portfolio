@@ -40,76 +40,82 @@
 
   // モーダルを開く直前にフォーカスされてた要素
   let lastFocusedElement;
-
-  const modalTriggers = document.querySelectorAll('.modal-trigger');
   const modal = document.querySelector('#modal-container');
-  const modalCloseBtn = document.querySelector('#modal-close');
-  const modalOverlay = document.querySelector('.modal__overlay');
 
-  const modalImg = document.querySelector('.modal__img');
-  const modalTitle = document.querySelector('.modal__title');
-  const modalTools = document.querySelector('.modal__tools');
+  if (modal) {
+    const modalTriggers = document.querySelectorAll('.modal-trigger');
+    const modalCloseBtn = document.querySelector('#modal-close');
+    const modalOverlay = document.querySelector('.modal__overlay');
 
-  const modalOverview = document.querySelector('.modal__overview');
-  const modalStructure = document.querySelector('.modal__structure');
-  const modalDesign = document.querySelector('.modal__design');
-  const modalDevelopment = document.querySelector('.modal__development');
-  const modalImprovement = document.querySelector('.modal__improvement');
+    const modalImg = document.querySelector('.modal__img');
+    const modalTitle = document.querySelector('.modal__title');
+    const modalTools = document.querySelector('.modal__tools');
 
-  const modalLink = document.querySelector('.modal__link');
+    const modalOverview = document.querySelector('.modal__overview');
+    const modalStructure = document.querySelector('.modal__structure');
+    const modalDesign = document.querySelector('.modal__design');
+    const modalDevelopment = document.querySelector('.modal__development');
+    const modalImprovement = document.querySelector('.modal__improvement');
 
-  // 開く処理
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      lastFocusedElement = trigger;
-      document.documentElement.classList.add('modal-open');
+    const modalLink = document.querySelector('.modal__link');
 
-      modalImg.src = trigger.dataset.img;
-      modalImg.alt = `「${trigger.dataset.title}」のスクリーンショット`;
-      modalTitle.textContent = trigger.dataset.title;
+    // 開く処理
+    modalTriggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        lastFocusedElement = trigger;
+        document.documentElement.classList.add('modal-open');
 
-      const tools = trigger.dataset.tools.split(',');
-      modalTools.innerHTML = tools
-        .map(tool => `<li class="modal__tag">${tool.trim()}</li>`)
-        .join('');
+        modalImg.src = trigger.dataset.img;
+        modalImg.alt = `「${trigger.dataset.title}」のスクリーンショット`;
+        modalTitle.textContent = trigger.dataset.title;
 
-      modalOverview.textContent = trigger.dataset.overview
-      modalStructure.textContent = trigger.dataset.structure;
-      modalDesign.textContent = trigger.dataset.design;
-      modalDevelopment.textContent = trigger.dataset.development;
-      modalImprovement.textContent = trigger.dataset.improvement;
+        const tools = trigger.dataset.tools.split(',');
+        modalTools.innerHTML = tools
+          .map(tool => `<li class="modal__tag">${tool.trim()}</li>`)
+          .join('');
 
-      modalLink.href = trigger.dataset.link;
+        modalOverview.textContent = trigger.dataset.overview
+        modalStructure.textContent = trigger.dataset.structure;
+        modalDesign.textContent = trigger.dataset.design;
+        modalDevelopment.textContent = trigger.dataset.development;
+        modalImprovement.textContent = trigger.dataset.improvement;
 
-      modal.classList.add('is-active');
-      modal.removeAttribute('aria-hidden');
-      modal.removeAttribute('inert');
-      modalCloseBtn.focus();
+        modalLink.href = trigger.dataset.link;
+
+        modal.classList.add('is-active');
+        modal.removeAttribute('aria-hidden');
+        modal.removeAttribute('inert');
+        modalCloseBtn.focus();
+      });
     });
-  });
 
-  // 閉じる処理
-  const closeModal = () => {
-    modal.classList.remove('is-active')
-    document.documentElement.classList.remove('modal-open');
+    // 閉じる処理
+    const closeModal = () => {
+      modal.classList.remove('is-active')
+      document.documentElement.classList.remove('modal-open');
 
-    // SRから隠す
-    modal.setAttribute('aria-hidden', 'true');
+      // SRから隠す
+      modal.setAttribute('aria-hidden', 'true');
 
-    // 要素をフォーカス不可にする
-    modal.setAttribute('inert', '');
+      // 要素をフォーカス不可にする
+      modal.setAttribute('inert', '');
 
-    if (lastFocusedElement) {
+      if (lastFocusedElement) {
 
-      // フォーカスを戻す
-      lastFocusedElement.focus();
-    }
-  };
+        // フォーカスを戻す
+        lastFocusedElement.focus();
+      }
+    };
 
-  modalCloseBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', closeModal);
+    modalCloseBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', closeModal);
+  }
+
+
 
   // コピーライト西暦
-  const year = new Date().getFullYear();
-  document.querySelector('#copyright').textContent = year;
+  const copyrightEl = document.querySelector('#copyright');
+  if (copyrightEl) {
+    copyrightEl.textContent = new Date().getFullYear();
+  }
 }

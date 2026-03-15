@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>送信が完了しました｜AK</title>
+  <meta property="og:description" content="Portfolio">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body.is-thanks-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .is-thanks-page main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #thanks {
+      flex: 1;
+      padding-top: var(--h-header);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #thanks h2 {
+      font-size: clamp(2rem, 9.5vw, 3rem);
+      color: var(--c-accent);
+    }
+
+    .thanks__inner {
+      margin-top: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--space-md);
+      padding-inline: 0.5rem;
+    }
+
+    .thanks__inner p {
+      font-size: 1.25rem;
+    }
+
+    .thanks__link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 500;
+      margin-top: var(--space-lg);
+      gap: 0.25em;
+      color: var(--c-accent);
+
+      span {
+        font-size: var(--fs-md);
+        font-weight: 500;
+        line-height: 1;
+        white-space: nowrap;
+        border-bottom: 1.5px solid currentColor;
+        padding-bottom: 5px;
+      }
+
+      svg {
+        display: block;
+        width: 1.4rem;
+        height: 1.4rem;
+        flex-shrink: 0;
+        transition: transform 0.3s;
+
+        &>* {
+          stroke-width: 17;
+        }
+      }
+
+      &:hover svg {
+        transform: translateX(-0.25rem);
+      }
+    }
+  </style>
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="is-thanks-page">
+  <header>
+    <div class="header__content container-lg">
+      <div class="site-logo">
+        <a href="https://aykweb.github.io/portfolio/index.html">AK</a>
+      </div>
+      <nav>
+        <ul class="global-nav">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#works">Works</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+
+        <button id="ham-btn" type="button" aria-label="メニューを開く" aria-controls="menu-panel" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+
+        <div id="menu-panel">
+          <ul class="menu-list">
+            <li><a href="https://aykweb.github.io/portfolio/index.html">Top</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#works">Works</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="thanks">
+      <div class="container-md">
+        <h2>Thank You.</h2>
+        <div class="thanks__inner">
+          <p>お問い合わせいただきありがとうございます。<br>
+            内容を確認のうえ、折り返しご連絡いたします。
+          </p>
+          <a class="thanks__link" href="https://aykweb.github.io/portfolio/index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+              <rect width="256" height="256" fill="none" />
+              <line x1="216" y1="128" x2="40" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" />
+              <polyline points="112 56 40 128 112 200" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="16" />
+            </svg>
+            <span>トップに戻る</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="footer__content container-lg">
+      <span class="footer-logo">AK</span>
+      <nav>
+        <ul class="footer-nav">
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#works">Works</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <small>&copy;<span id="copyright">2025</span>Ayumi Kubo</small>
+    </div>
+  </footer>
+</body>
+
+</html>
