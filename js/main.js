@@ -49,7 +49,6 @@
   const modalImg = document.querySelector('.modal__img');
   const modalTitle = document.querySelector('.modal__title');
   const modalTools = document.querySelector('.modal__tools');
-  // const modalDesc = document.querySelector('.modal__desc');
 
   const modalOverview = document.querySelector('.modal__overview');
   const modalStructure = document.querySelector('.modal__structure');
@@ -66,7 +65,7 @@
       document.documentElement.classList.add('modal-open');
 
       modalImg.src = trigger.dataset.img;
-      modalImg.alt = trigger.dataset.title;
+      modalImg.alt = `「${trigger.dataset.title}」のスクリーンショット`;
       modalTitle.textContent = trigger.dataset.title;
 
       const tools = trigger.dataset.tools.split(',');
@@ -85,7 +84,7 @@
       modal.classList.add('is-active');
       modal.removeAttribute('aria-hidden');
       modal.removeAttribute('inert');
-      modalCloseBtn && modalCloseBtn.focus();
+      modalCloseBtn.focus();
     });
   });
 
