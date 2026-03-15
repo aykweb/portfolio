@@ -113,10 +113,4 @@
   // コピーライト西暦
   const year = new Date().getFullYear();
   document.querySelector('#copyright').textContent = year;
-
-  // お問い合わせ
-  const contactEmail = 'ayumikubo.0824@gmail.com';
-  const contactSubject = 'ポートフォリオサイトからのお問い合わせ';
-
-  document.querySelector('[data-contact]').href = `mailto:${contactEmail}?subject=${encodeURIComponent(contactSubject)}`;
 }
