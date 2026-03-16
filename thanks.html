@@ -35,38 +35,52 @@
     }
 
     #thanks h2 {
-      font-size: clamp(2rem, 9.5vw, 3rem);
+      font-size: clamp(1.75rem, 5vw, 2.25rem);
+      letter-spacing: var(--ls-base);
       color: var(--c-accent);
     }
 
     .thanks__inner {
-      margin-top: var(--space-md);
+      margin-top: var(--space-xl);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: var(--space-md);
+      gap: var(--space-xl);
       padding-inline: 0.5rem;
     }
 
     .thanks__inner p {
       font-size: 1.25rem;
+      line-height: 1.8;
     }
 
     .thanks__link {
       display: inline-flex;
       align-items: center;
-      font-weight: 500;
-      margin-top: var(--space-lg);
-      gap: 0.25em;
+      gap: 0.35em;
       color: var(--c-accent);
+      font-weight: 500;
 
       span {
         font-size: var(--fs-md);
         font-weight: 500;
         line-height: 1;
         white-space: nowrap;
-        border-bottom: 1.5px solid currentColor;
-        padding-bottom: 5px;
+        position: relative;
+        padding-bottom: 4px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1.5px;
+          background: currentColor;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
       }
 
       svg {
@@ -74,15 +88,24 @@
         width: 1.4rem;
         height: 1.4rem;
         flex-shrink: 0;
-        transition: transform 0.3s;
+        opacity: 0.5;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
 
         &>* {
           stroke-width: 17;
         }
       }
 
-      &:hover svg {
-        transform: translateX(-0.25rem);
+      @media (hover: hover) {
+        &:hover span::after {
+          transform: scaleX(1);
+          transform-origin: right;
+        }
+
+        &:hover svg {
+          transform: translateX(-0.3rem);
+          opacity: 1;
+        }
       }
     }
   </style>

@@ -58,15 +58,18 @@
     <section id="about">
       <div class="container-md">
         <h2>About</h2>
-        <dl class="about__inner">
-          <dt>About Me</dt>
-          <dd>神奈川県出身、フロントエンド志望のWeb制作者です。<br>
-            コンテンツが引き立つデザイン、多くの人に届きやすいUIを目指しています。</dd>
-          <dt>Skills</dt>
-          <dd>HTML, CSS, JavaScript, Figma</dd>
-          <dt>Hobbies</dt>
-          <dd>コーディング、郊外の散歩、音楽</dd>
-        </dl>
+        <div class="about__inner">
+          <dl>
+            <dt>About Me</dt>
+            <dd>神奈川県出身、フロントエンド志望のWeb制作者です。<br>
+              コンテンツが引き立つデザイン、多くの人に届きやすいUIを目指しています。</dd>
+            <dt>Skills</dt>
+            <dd>HTML, CSS, JavaScript, Figma</dd>
+            <dt>Hobbies</dt>
+            <dd>コーディング、郊外の散歩、音楽</dd>
+          </dl>
+          <img class="about__photo" src="/images/photo.jpeg" alt="郊外の石段を歩く後ろ姿">
+        </div>
       </div>
     </section>
     <section id="works">
@@ -79,7 +82,8 @@
               data-structure="WordPress.comで制作したページをもとに、VS Codeで模写しました。"
               data-design="公共施設という性質に合わせて文字の読みやすさを重視しました。展覧会のビジュアルが全面に展開するのを想定しシンプルな構成になっています。"
               data-development="CSS変数でフォント・余白・色を管理、パーツは共通化してJavaScriptで読み込む構造にしました。"
-              data-improvement="開館情報の自動表示など、動的な機能の実装が今後の課題です。" data-link="https://aykweb.github.io/moic/" type="button">
+              data-improvement="検索機能や開館情報の自動表示など、動的な機能の実装が今後の課題です。" data-link="https://aykweb.github.io/moic/"
+              type="button">
               <div>
                 <img class="work__thumb" src="images/p_MOIC.png" alt="千葉かくう美術館のウェブサイトのスクリーンショット" width="720"
                   height="540">
@@ -115,34 +119,34 @@
       </div>
     </section>
 
-<section id="contact">
-  <div class="container-md">
-    <h2>Contact</h2>
-    <div class="contact__inner">
-      <p>お仕事のご依頼・ご相談はこちら<br>お気軽にお問合せください</p>
-      <form class="contact__form" action="https://ssgform.com/s/pCxPPgLff5xU" method="POST">
-        <input type="hidden" name="_after" value="https://aykweb.github.io/portfolio/">
-        <div class="contact__field">
-          <label for="contact-name">お名前</label>
-          <input type="text" id="contact-name" name="お名前" required autocomplete="name">
+    <section id="contact">
+      <div class="container-md">
+        <h2>Contact</h2>
+        <div class="contact__inner">
+          <p>お仕事のご依頼・ご相談はこちら<br>お気軽にお問合せください</p>
+          <form class="contact__form" action="https://ssgform.com/s/pCxPPgLff5xU" method="POST">
+            <input type="hidden" name="_after" value="https://aykweb.github.io/portfolio/">
+            <div class="contact__field">
+              <label for="contact-name">お名前</label>
+              <input type="text" id="contact-name" name="お名前" required autocomplete="name">
+            </div>
+            <div class="contact__field">
+              <label for="contact-email">メールアドレス</label>
+              <input type="email" id="contact-email" name="メールアドレス" required autocomplete="email">
+            </div>
+            <div class="contact__field">
+              <label for="contact-subject">件名</label>
+              <input type="text" id="contact-subject" name="件名" required>
+            </div>
+            <div class="contact__field">
+              <label for="contact-message">お問い合わせ内容</label>
+              <textarea id="contact-message" name="お問い合わせ内容" rows="6" required></textarea>
+            </div>
+            <button class="submit" type="submit">送信する</button>
+          </form>
         </div>
-        <div class="contact__field">
-          <label for="contact-email">メールアドレス</label>
-          <input type="email" id="contact-email" name="メールアドレス" required autocomplete="email">
-        </div>
-        <div class="contact__field">
-          <label for="contact-subject">件名</label>
-          <input type="text" id="contact-subject" name="件名" required>
-        </div>
-        <div class="contact__field">
-          <label for="contact-message">お問い合わせ内容</label>
-          <textarea id="contact-message" name="お問い合わせ内容" rows="6" required></textarea>
-        </div>
-        <button class="submit" type="submit">送信する</button>
-      </form>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
   </main>
 
   <div id="modal-container" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
