@@ -548,16 +548,15 @@ section:not(#thanks) h2 {
 
 .about__inner {
   margin-left: var(--space-md);
-  /* display: flex;
-  flex-direction: row-reverse;
-  gap: 3rem;
-  align-items: flex-start; */
+  position: relative;
+  /* 追加 */
+  padding-right: 160px;
+  /* 写真が被らないよう右に余白 */
 
   @media (max-width: 768px) {
     margin-left: 0;
     padding-inline: 0.5rem;
-    /* flex-direction: column;
-    gap: 0; */
+    padding-right: 0.5rem;
   }
 }
 
@@ -574,21 +573,29 @@ section:not(#thanks) h2 {
   margin-left: 0.5rem;
 }
 
-.about__inner dd+dt,
-.about__photo {
+.about__inner dd+dt {
   margin-top: var(--space-lg);
 }
 
 .about__photo {
   display: block;
-  transform: rotate(-6deg);
-  box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
+  position: absolute;
+  top: 0;
+  right: 0;
   width: 140px;
   height: 140px;
-  flex-shrink: 0;
   object-fit: cover;
   object-position: 24% 20%;
   border-radius: 50%;
+  transform: rotate(-6deg);
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
+
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    margin-top: var(--space-xl);
+    box-shadow: none;
+  }
 }
 
 /* --------------- works --------------- */
@@ -1012,6 +1019,10 @@ footer {
 .footer-nav {
   display: flex;
   gap: 0.5em;
+
+  @media (max-width: 540px) {
+    display: none;
+  }
 }
 
 .footer-nav li a {
