@@ -699,6 +699,8 @@ section:not(#thanks) h2.is-visible::after {
 
 .work__title {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
+
+  /* iOS16以下 Safari対応 */
   color: var(--c-text);
 }
 
@@ -962,7 +964,6 @@ section:not(#thanks) h2.is-visible::after {
 
 .contact__field input,
 .contact__field textarea {
-  font-size: max(16px, var(--fs-base));
   font: inherit;
   background: transparent;
   color: var(--c-text);
@@ -976,6 +977,9 @@ section:not(#thanks) h2.is-visible::after {
   padding: var(--space-sm) 0;
   width: 100%;
   transition: border-color var(--t);
+  
+  /* iOS16以下 Safari対応 */
+  font-size: 16px;
 }
 
 .contact__field input:focus,
@@ -994,7 +998,7 @@ section:not(#thanks) h2.is-visible::after {
   transition: border-color var(--t), color var(--t);
 
   @media (max-width: 768px) {
-    color: var(--c-sep);
+    color: var(--c-accent);
   }
 }
 
@@ -1006,11 +1010,9 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 @media (hover: none) {
-
   .contact__form .submit:focus,
   .contact__form .submit:focus-visible {
     border-color: var(--c-accent);
-    color: var(--c-accent);
   }
 }
 
