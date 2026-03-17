@@ -23,7 +23,7 @@
   });
 
 
-  const h2s = document.querySelectorAll('h2');
+  const h2s = document.querySelectorAll('h2, .about__photo');
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
