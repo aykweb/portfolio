@@ -134,12 +134,6 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-
-  @media (max-width: 768px) {
-
-    background: yellow;
-
-  }
 }
 
 
@@ -230,17 +224,18 @@ header .site-logo {
   color: var(--c-text);
   height: var(--h-header);
   white-space: nowrap;
+}
 
-  a {
-    transition: opacity var(--t);
+header .site-logo a {
+  transition: opacity var(--t);
+}
 
-    @media (hover: hover) {
-      &:hover {
-        opacity: 0.65;
-      }
-    }
+@media (hover: hover) {
+  header .site-logo a:hover {
+    opacity: 0.65;
   }
 }
+
 
 /* --------------- nav --------------- */
 header nav {
@@ -269,22 +264,22 @@ header nav {
   letter-spacing: var(--ls-wide);
   position: relative;
   transition: opacity var(--t);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.45;
-    }
+@media (hover: hover) {
+  .global-nav a:hover {
+    opacity: 0.45;
   }
 }
 
 header [href="#contact"] {
   color: var(--c-accent);
   transition: opacity var(--t);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.65;
-    }
+@media (hover: hover) {
+  header [href="#contact"]:hover {
+    opacity: 0.65;
   }
 }
 
@@ -315,21 +310,19 @@ header [href="#contact"] {
     height: 2px;
     translate: -50% -50%;
     transition: rotate 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    &:nth-child(2) {
-      rotate: 90deg;
-    }
+  #ham-btn span:nth-child(2) {
+    rotate: 90deg;
   }
 }
 
-nav.is-active #ham-btn span {
-  &:nth-child(1) {
-    rotate: 45deg;
-  }
+nav.is-active #ham-btn span:nth-child(1) {
+  rotate: 45deg;
+}
 
-  &:nth-child(2) {
-    rotate: 135deg;
-  }
+nav.is-active #ham-btn span:nth-child(2) {
+  rotate: 135deg;
 }
 
 #menu-panel {
@@ -363,11 +356,12 @@ nav.is-active #ham-btn span {
 
     /* 閉じる時 */
     transition: opacity 0.1s;
-
-    &+& {
-      margin-top: 0.5em;
-    }
   }
+
+  .menu-list li+.menu-list li {
+    margin-top: 0.5em;
+  }
+
 
   .menu-list li a {
     display: block;
@@ -381,9 +375,8 @@ nav.is-active #ham-btn span {
   }
 
   /* オーバーレイ中 */
-
-  /* スクロール防止 */
   body.menu-open {
+    /* スクロール防止 */
     overflow: hidden;
     position: fixed;
     width: 100%;
@@ -418,24 +411,25 @@ nav.is-active #ham-btn span {
     /* 開く時 */
     transition: opacity 0.4s,
       transform 0.4s;
+  }
 
-    &:nth-child(1) {
-      transition-delay: 0.1s;
-    }
+  nav.is-active .menu-list li:nth-child(1) {
+    transition-delay: 0.1s;
+  }
 
-    &:nth-child(2) {
-      transition-delay: 0.2s;
-    }
+  nav.is-active .menu-list li:nth-child(2) {
+    transition-delay: 0.2s;
+  }
 
-    &:nth-child(3) {
-      transition-delay: 0.3s;
-    }
+  nav.is-active .menu-list li:nth-child(3) {
+    transition-delay: 0.3s;
+  }
 
-    &:nth-child(4) {
-      transition-delay: 0.4s;
-    }
+  nav.is-active .menu-list li:nth-child(4) {
+    transition-delay: 0.4s;
   }
 }
+
 
 
 /* --------------- main --------------- */
@@ -490,26 +484,27 @@ section:not(#thanks) h2 {
   @media (max-width: 768px) {
     margin-bottom: 2rem;
   }
-
-  &.is-visible {
-    opacity: 1;
-    translate: 0 0;
-  }
-
-  &::after {
-    content: '';
-    display: inline-block;
-    width: 0.55em;
-    height: 0.1rem;
-    background: currentColor;
-    margin-left: 0.15em;
-    vertical-align: baseline;
-  }
-
-  &.is-visible::after {
-    animation: blink-anime 1.4s 0.3s step-end forwards;
-  }
 }
+
+section:not(#thanks) h2.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+section:not(#thanks) h2::after {
+  content: '';
+  display: inline-block;
+  width: 0.55em;
+  height: 0.1rem;
+  background: currentColor;
+  margin-left: 0.15em;
+  vertical-align: baseline;
+}
+
+section:not(#thanks) h2.is-visible::after {
+  animation: blink-anime 1.4s 0.3s step-end forwards;
+}
+
 
 /* --------------- hero --------------- */
 .hero {
@@ -605,10 +600,10 @@ section:not(#thanks) h2 {
     margin-top: var(--space-xl);
     box-shadow: none;
   }
+}
 
-  &.is-visible {
-    opacity: 1;
-  }
+.about__photo.is-visible {
+  opacity: 1;
 }
 
 /* --------------- works --------------- */
@@ -635,42 +630,43 @@ section:not(#thanks) h2 {
   display: block;
   width: 100%;
   cursor: pointer;
+}
 
-  &::after {
-    content: '詳細を見る';
-    position: absolute;
-    top: 0;
-    inset-inline: 0;
-    bottom: var(--h-work__info);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modal-trigger.work__card::after {
+  content: '詳細を見る';
+  position: absolute;
+  top: 0;
+  inset-inline: 0;
+  bottom: var(--h-work__info);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    background: rgba(30, 28, 28, 0.6);
-    color: var(--c-footer);
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity var(--t);
-  }
+  background: rgba(30, 28, 28, 0.6);
+  color: var(--c-footer);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--t);
+}
 
-  @media (hover: hover) {
+@media (hover: hover) {
 
-    /* マウスホバー&Tab */
-    &:hover::after,
-    &:focus-visible::after {
-      opacity: 1;
-    }
-  }
-
-  @media (hover: none) {
-    &:after {
-      opacity: 1;
-    }
+  /* マウスホバー, Tab */
+  .modal-trigger.work__card:hover::after,
+  .modal-trigger.work__card:focus-visible::after {
+    opacity: 1;
   }
 }
+
+@media (hover: none) {
+  .modal-trigger.work__card:after {
+    opacity: 1;
+  }
+}
+
 
 .work__thumb {
   aspect-ratio: 4 / 3;
@@ -691,12 +687,12 @@ section:not(#thanks) h2 {
   align-items: start;
   justify-content: center;
   padding-inline: 5%;
+}
 
-  &>* {
-    letter-spacing: 0.06em;
-    font-weight: 500;
-    min-height: 0;
-  }
+.work__info>* {
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  min-height: 0;
 }
 
 .work__cat {
@@ -741,7 +737,6 @@ section:not(#thanks) h2 {
   max-height: 90vh;
   max-width: 580px;
   width: 100%;
-
   display: flex;
   flex-direction: column;
 
@@ -800,41 +795,42 @@ section:not(#thanks) h2 {
   border: 1px solid var(--c-sep);
   border-radius: 1px;
   transition: color var(--t), border-color var(--t);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      color: var(--c-text);
-      border-color: var(--c-text-sub);
-    }
-  }
-
-  svg {
-    width: 1rem;
-    height: 1rem;
-    flex-shrink: 0;
-
-    &>* {
-      stroke-width: 18;
-    }
+@media (hover: hover) {
+  #modal-close:hover {
+    color: var(--c-text);
+    border-color: var(--c-text-sub);
   }
 }
+
+#modal-close svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+#modal-close svg>* {
+  stroke-width: 18;
+}
+
 
 .modal__tools {
   order: 3;
   width: 100%;
   display: flex;
   gap: var(--space-sm);
+}
 
-  .modal__tag {
-    cursor: default;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    color: var(--c-text-sub);
-    padding: 0.25rem 0.375rem;
-    border: 1px solid var(--c-sep);
-    border-radius: 1px;
-    margin-top: var(--space-sm);
-  }
+.modal__tag {
+  cursor: default;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--c-text-sub);
+  padding: 0.25rem 0.375rem;
+  border: 1px solid var(--c-sep);
+  border-radius: 1px;
+  margin-top: var(--space-sm);
 }
 
 .modal__img {
@@ -853,10 +849,10 @@ section:not(#thanks) h2 {
   font-weight: 400;
   letter-spacing: 0.16em;
   color: var(--c-text-sub);
+}
 
-  p+& {
-    margin-top: var(--space-md);
-  }
+.modal__details p+h4 {
+  margin-top: var(--space-md);
 }
 
 .modal__details p {
@@ -881,7 +877,7 @@ section:not(#thanks) h2 {
     position: relative;
     padding-bottom: 5px;
 
-    &::after {
+    span::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -902,22 +898,22 @@ section:not(#thanks) h2 {
     flex-shrink: 0;
     opacity: 0.5;
     transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--t);
+  }
+}
 
-    &>* {
-      stroke-width: 17;
-    }
+.modal__link>* {
+  stroke-width: 17;
+}
+
+@media (hover: hover) {
+  .modal__link:hover span::after {
+    transform: scaleX(1);
+    transform-origin: left;
   }
 
-  @media (hover: hover) {
-    &:hover span::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    &:hover svg {
-      transform: translateX(0.2rem);
-      opacity: 1;
-    }
+  .modal__link:hover svg {
+    transform: translateX(0.2rem);
+    opacity: 1;
   }
 }
 
@@ -977,10 +973,11 @@ section:not(#thanks) h2 {
   padding: var(--space-sm) 0;
   width: 100%;
   transition: border-color var(--t);
+}
 
-  &:focus {
-    border-bottom-color: var(--c-accent);
-  }
+.contact__field input:focus,
+.contact__field textarea:focus {
+  border-bottom-color: var(--c-accent);
 }
 
 .contact__form .submit {
@@ -992,22 +989,21 @@ section:not(#thanks) h2 {
   font-weight: 500;
   border-radius: 1px;
   transition: border-color var(--t), color var(--t);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      border-color: var(--c-accent);
-      color: var(--c-accent);
-    }
-  }
-
-  @media (hover: none) {
-    &:focus {
-      border-color: var(--c-accent);
-      color: var(--c-accent);
-    }
+@media (hover: hover) {
+  .contact__form .submit:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
   }
 }
 
+@media (hover: none) {
+  .contact__form .submit:focus {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+  }
+}
 
 /* --------------- footer --------------- */
 footer {
@@ -1047,11 +1043,11 @@ footer {
   padding-inline: .25rem;
   white-space: nowrap;
   transition: opacity var(--t);
+}
 
-  @media (hover: hover) {
-    &:hover {
-      opacity: 0.45;
-    }
+@media (hover: hover) {
+  .footer-nav li a:hover {
+    opacity: 0.45;
   }
 }
 
@@ -1071,5 +1067,6 @@ footer small {
     display: inline-block;
     padding-inline: .5em;
     font-weight: inherit;
+    background: yellow;
   }
 }
