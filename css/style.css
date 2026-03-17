@@ -272,13 +272,13 @@ header nav {
   }
 }
 
-header [href="#contact"] {
+a[href*="contact"] {
   color: var(--c-accent);
   transition: opacity var(--t);
 }
 
 @media (hover: hover) {
-  header [href="#contact"]:hover {
+  a[href*="contact"]:hover {
     opacity: 0.65;
   }
 }
@@ -368,10 +368,6 @@ nav.is-active #ham-btn span:nth-child(2) {
     padding: 1em;
     font-size: var(--fs-lg);
     letter-spacing: var(--ls-wide);
-  }
-
-  [href="/#contact"] {
-    color: var(--c-accent);
   }
 
   /* オーバーレイ中 */
