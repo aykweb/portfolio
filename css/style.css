@@ -699,6 +699,7 @@ section:not(#thanks) h2.is-visible::after {
 
 .work__title {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--c-text);
 }
 
 /* --------------- modal --------------- */
@@ -892,9 +893,8 @@ section:not(#thanks) h2.is-visible::after {
   height: 1.25rem;
   flex-shrink: 0;
   opacity: 0.5;
-  transition: transform var(--t) 
-  cubic-bezier(0.4, 0, 0.2, 1),
-  opacity var(--t);
+  transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1),
+    opacity var(--t);
 }
 
 .modal__link svg>* {
@@ -962,6 +962,7 @@ section:not(#thanks) h2.is-visible::after {
 
 .contact__field input,
 .contact__field textarea {
+  font-size: max(16px, var(--fs-base));
   font: inherit;
   background: transparent;
   color: var(--c-text);
