@@ -60,53 +60,51 @@
       gap: 0.35em;
       color: var(--c-accent);
       font-weight: 500;
+    }
 
-      span {
-        font-size: var(--fs-md);
-        font-weight: 500;
-        line-height: 1;
-        white-space: nowrap;
-        position: relative;
-        padding-bottom: 4px;
+    .thanks__link span {
+      font-size: var(--fs-md);
+      font-weight: 500;
+      line-height: 1;
+      white-space: nowrap;
+      position: relative;
+      padding-bottom: 4px;
+    }
 
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          height: 1.5px;
-          background: currentColor;
-          transform: scaleX(0);
-          transform-origin: right;
-          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-      }
+    .thanks__link span::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-      svg {
-        display: block;
-        width: 1.4rem;
-        height: 1.4rem;
-        flex-shrink: 0;
-        opacity: 0.5;
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    .thanks__link:hover span::after {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
 
-        &>* {
-          stroke-width: 17;
-        }
-      }
+    .thanks__link svg {
+      display: block;
+      width: 1.4rem;
+      height: 1.4rem;
+      flex-shrink: 0;
+      opacity: 0.5;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    }
 
-      @media (hover: hover) {
-        &:hover span::after {
-          transform: scaleX(1);
-          transform-origin: right;
-        }
+    .thanks__link svg>* {
+      stroke-width: 17;
+    }
 
-        &:hover svg {
-          transform: translateX(-0.3rem);
-          opacity: 1;
-        }
-      }
+    .thanks__link:hover svg {
+      transform: translateX(-0.3rem);
+      opacity: 1;
     }
   </style>
   <script src="js/main.js" defer></script>

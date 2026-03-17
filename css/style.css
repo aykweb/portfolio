@@ -431,9 +431,7 @@ nav.is-active #ham-btn span:nth-child(2) {
 }
 
 
-
 /* --------------- main --------------- */
-
 /* common */
 main section {
   scroll-snap-align: end;
@@ -667,7 +665,6 @@ section:not(#thanks) h2.is-visible::after {
   }
 }
 
-
 .work__thumb {
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -681,7 +678,6 @@ section:not(#thanks) h2.is-visible::after {
   width: 100%;
   height: var(--h-work__info);
   background: var(--c-bg);
-
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -706,7 +702,6 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 /* --------------- modal --------------- */
-
 .modal {
   display: none;
 }
@@ -739,7 +734,6 @@ section:not(#thanks) h2.is-visible::after {
   width: 100%;
   display: flex;
   flex-direction: column;
-
   animation: modal-in 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -868,40 +862,40 @@ section:not(#thanks) h2.is-visible::after {
   color: var(--c-accent);
   font-weight: 500;
   margin-top: var(--space-lg);
-
-  span {
-    font-size: var(--fs-base);
-    font-weight: 500;
-    line-height: 1;
-    white-space: nowrap;
-    position: relative;
-    padding-bottom: 5px;
-
-    span::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 1.5px;
-      background: currentColor;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1);
-    }
-  }
-
-  svg {
-    display: block;
-    width: 1.25rem;
-    height: 1.25rem;
-    flex-shrink: 0;
-    opacity: 0.5;
-    transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--t);
-  }
 }
 
-.modal__link>* {
+.modal__link span {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.modal__link span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__link svg {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--t);
+}
+
+.modal__link svg>* {
   stroke-width: 17;
 }
 
@@ -989,6 +983,10 @@ section:not(#thanks) h2.is-visible::after {
   font-weight: 500;
   border-radius: 1px;
   transition: border-color var(--t), color var(--t);
+
+  @media (max-width: 768px) {
+    color: var(--c-sep);
+  }
 }
 
 @media (hover: hover) {
@@ -999,7 +997,9 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 @media (hover: none) {
-  .contact__form .submit:focus {
+
+  .contact__form .submit:focus,
+  .contact__form .submit:focus-visible {
     border-color: var(--c-accent);
     color: var(--c-accent);
   }
@@ -1062,11 +1062,10 @@ footer small {
   letter-spacing: var(--ls-tight);
   font-weight: 500;
   position: relative;
+}
 
-  span {
-    display: inline-block;
-    padding-inline: .5em;
-    font-weight: inherit;
-    background: yellow;
-  }
+footer small span {
+  display: inline-block;
+  padding-inline: .5em;
+  font-weight: inherit;
 }
