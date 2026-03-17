@@ -549,14 +549,11 @@ section:not(#thanks) h2.is-visible::after {
 .about__inner {
   margin-left: var(--space-md);
   position: relative;
-  /* 追加 */
   padding-right: 160px;
-  /* 写真が被らないよう右に余白 */
 
   @media (max-width: 768px) {
     margin-left: 0;
     padding-inline: 0.5rem;
-    padding-right: 0.5rem;
   }
 }
 
@@ -570,7 +567,7 @@ section:not(#thanks) h2.is-visible::after {
   font-size: var(--fs-md);
   line-height: 1.6;
   margin-top: var(--space-sm);
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 .about__inner dd+dt {
@@ -595,8 +592,9 @@ section:not(#thanks) h2.is-visible::after {
   @media (max-width: 768px) {
     position: static;
     transform: none;
-    margin-top: var(--space-xl);
+    margin-top: 4rem;
     box-shadow: none;
+    margin-inline: auto;
   }
 }
 
@@ -786,12 +784,18 @@ section:not(#thanks) h2.is-visible::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  padding: 0.025rem;
   color: var(--c-text-sub);
   border: 1px solid var(--c-sep);
   border-radius: 1px;
   transition: color var(--t), border-color var(--t);
+  position: relative;
+}
+
+#modal-close::before {
+  content: '';
+  position: absolute;
+  inset: -0.5rem;
 }
 
 @media (hover: hover) {
@@ -815,8 +819,13 @@ section:not(#thanks) h2.is-visible::after {
 .modal__tools {
   order: 3;
   width: 100%;
-  display: flex;
+  display: inline-flex;
   gap: var(--space-sm);
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    row-gap: 0;
+  }
 }
 
 .modal__tag {
@@ -977,7 +986,7 @@ section:not(#thanks) h2.is-visible::after {
   padding: var(--space-sm) 0;
   width: 100%;
   transition: border-color var(--t);
-  
+
   /* iOS16以下 Safari対応 */
   font-size: 16px;
 }
@@ -1010,6 +1019,7 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 @media (hover: none) {
+
   .contact__form .submit:focus,
   .contact__form .submit:focus-visible {
     border-color: var(--c-accent);
