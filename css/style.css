@@ -858,7 +858,7 @@ section:not(#thanks) h2.is-visible::after {
 .modal__link {
   display: inline-flex;
   align-items: center;
-  gap: 0.35em;
+  gap: 0.25em;
   color: var(--c-accent);
   font-weight: 500;
   margin-top: var(--space-lg);
@@ -892,7 +892,9 @@ section:not(#thanks) h2.is-visible::after {
   height: 1.25rem;
   flex-shrink: 0;
   opacity: 0.5;
-  transition: transform var(--t) cubic-bezier(0.4, 0, 0.2, 1), opacity var(--t);
+  transition: transform var(--t) 
+  cubic-bezier(0.4, 0, 0.2, 1),
+  opacity var(--t);
 }
 
 .modal__link svg>* {
@@ -907,6 +909,12 @@ section:not(#thanks) h2.is-visible::after {
 
   .modal__link:hover svg {
     transform: translateX(0.2rem);
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .modal__link svg {
     opacity: 1;
   }
 }

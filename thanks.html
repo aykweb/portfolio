@@ -57,7 +57,7 @@
     .thanks__link {
       display: inline-flex;
       align-items: center;
-      gap: 0.35em;
+      gap: 0.25em;
       color: var(--c-accent);
       font-weight: 500;
     }
@@ -68,7 +68,7 @@
       line-height: 1;
       white-space: nowrap;
       position: relative;
-      padding-bottom: 4px;
+      padding-bottom: 5px;
     }
 
     .thanks__link span::after {
@@ -84,15 +84,10 @@
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .thanks__link:hover span::after {
-      transform: scaleX(1);
-      transform-origin: right;
-    }
-
     .thanks__link svg {
       display: block;
-      width: 1.4rem;
-      height: 1.4rem;
+      width: 1.35rem;
+      height: 1.35rem;
       flex-shrink: 0;
       opacity: 0.5;
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
@@ -102,10 +97,24 @@
       stroke-width: 17;
     }
 
-    .thanks__link:hover svg {
-      transform: translateX(-0.3rem);
-      opacity: 1;
+    @media (hover: hover) {
+      .thanks__link:hover span::after {
+        transform: scaleX(1);
+        transform-origin: right;
+      }
+
+      .thanks__link:hover svg {
+        transform: translateX(-0.3rem);
+        opacity: 1;
+      }
     }
+
+    @media (hover: none) {
+      .thanks__link svg {
+        opacity: 1;
+      }
+    }
+
   </style>
   <script src="js/main.js" defer></script>
 </head>
