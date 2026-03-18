@@ -563,7 +563,7 @@ section:not(#thanks) h2.is-visible::after {
   font-size: var(--fs-md);
   line-height: 1.6;
   margin-top: var(--space-sm);
-  margin-left: 0.25rem;
+  margin-inline: 0.25rem;
 }
 
 .about__inner dd+dt {
