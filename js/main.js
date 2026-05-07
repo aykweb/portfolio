@@ -118,4 +118,5 @@
   if (copyrightEl) {
     copyrightEl.textContent = new Date().getFullYear();
   }
+
 }

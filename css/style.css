@@ -70,12 +70,12 @@ img {
     --fs-xl: 2rem;
   }
 
+  --txt-shadow: 2px 4px 12px rgb(0 0 0 / 0.6);
+
   /* 字間 */
   --ls-tight: 0.04em;
   --ls-base: 0.06em;
   --ls-wide: 0.1em;
-
-  /* brand font logo */
   --ls-logo: 0.14em;
 
   /* 背景 */
@@ -159,13 +159,13 @@ h2,
 .btn,
 .hero,
 .global-nav,
-.about__inner dt,
 .footer-nav {
   -webkit-text-stroke-width: var(--w-stroke-300);
 }
 
 /* BOLD */
 h2,
+.about__inner dt,
 .menu-list {
   -webkit-text-stroke-width: var(--w-stroke-600);
 }
@@ -528,6 +528,7 @@ section:not(#thanks) h2.is-visible::after {
 
 .hero .name {
   font-size: clamp(2rem, 9.5vw, 3rem);
+  text-shadow:var(--txt-shadow);
 }
 
 .hero p {
@@ -554,7 +555,7 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 .about__inner dt {
-  color: var(--c-text-sub);
+  color: var(--c-accent);
   font-size: var(--fs-md);
   letter-spacing: var(--ls-wide);
 }
@@ -562,19 +563,24 @@ section:not(#thanks) h2.is-visible::after {
 .about__inner dd {
   font-size: var(--fs-md);
   line-height: 1.6;
-  margin-top: var(--space-sm);
+  margin-top: 1em;
   margin-inline: 0.25rem;
 }
 
 .about__inner dd+dt {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.about__inner br {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: inline;
+  }
 }
 
 .about__photo {
   display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 140px;
   height: 140px;
   object-fit: cover;
@@ -584,14 +590,7 @@ section:not(#thanks) h2.is-visible::after {
   box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
   opacity: 0;
   transition: opacity 0.5s;
-
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    margin-top: 4rem;
-    box-shadow: none;
-    margin-inline: auto;
-  }
+  margin-top: var(--space-xl);
 }
 
 .about__photo.is-visible {
@@ -944,7 +943,6 @@ section:not(#thanks) h2.is-visible::after {
   color: var(--c-text-sub);
   font-size: var(--fs-md);
   line-height: 1.5;
-  margin-bottom: var(--space-xl);
 }
 
 .contact__form {
@@ -953,6 +951,7 @@ section:not(#thanks) h2.is-visible::after {
   gap: var(--space-lg);
   padding-inline: 1rem;
   max-width: 480px;
+  margin-top: var(--space-2xl);
 }
 
 .contact__field {
