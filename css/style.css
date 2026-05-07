@@ -590,8 +590,8 @@ section:not(#thanks) h2.is-visible::after {
   transform: rotate(-3deg);
   box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
   opacity: 0;
+  margin-top: 3rem;
   transition: opacity 0.5s;
-  margin-top: var(--space-xl);
 }
 
 .about__photo.is-visible {
