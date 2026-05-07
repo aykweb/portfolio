@@ -145,6 +145,7 @@ h2,
 .global-nav,
 .menu-list,
 .hero,
+.modal__tag,
 .work__cat,
 .footer-logo,
 .footer-nav {
@@ -563,7 +564,7 @@ section:not(#thanks) h2.is-visible::after {
 .about__inner dd {
   font-size: var(--fs-md);
   line-height: 1.6;
-  margin-top: 1em;
+  margin-top: var(--space-sm);
   margin-inline: 0.25rem;
 }
 
@@ -590,7 +591,7 @@ section:not(#thanks) h2.is-visible::after {
   box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
   opacity: 0;
   transition: opacity 0.5s;
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
 }
 
 .about__photo.is-visible {
@@ -825,7 +826,7 @@ section:not(#thanks) h2.is-visible::after {
 
 .modal__tag {
   cursor: default;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   color: var(--c-text-sub);
   padding: 0.25rem 0.375rem;
@@ -940,7 +941,6 @@ section:not(#thanks) h2.is-visible::after {
 }
 
 .contact__inner>p {
-  color: var(--c-text-sub);
   font-size: var(--fs-md);
   line-height: 1.5;
 }
@@ -957,6 +957,7 @@ section:not(#thanks) h2.is-visible::after {
 .contact__field {
   display: flex;
   flex-direction: column;
+  color: var(--c-text-sub);
   gap: var(--space-xs);
 }
 
@@ -1058,12 +1059,13 @@ footer {
   letter-spacing: var(--ls-wide);
   padding-inline: .25rem;
   white-space: nowrap;
-  transition: opacity var(--t);
+  transition: opacity var(--t), color var(--t);
 }
 
 @media (hover: hover) {
   .footer-nav li a:hover {
     opacity: 0.45;
+    color: var(--c-accent);
   }
 }
 
