@@ -529,7 +529,7 @@ section:not(#thanks) h2.is-visible::after {
 
 .hero .name {
   font-size: clamp(2rem, 9.5vw, 3rem);
-  text-shadow:var(--txt-shadow);
+  text-shadow: var(--txt-shadow);
 }
 
 .hero p {
@@ -591,7 +591,7 @@ section:not(#thanks) h2.is-visible::after {
   box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
   opacity: 0;
   transition: opacity 0.5s;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-xl);
 }
 
 .about__photo.is-visible {
@@ -995,22 +995,18 @@ section:not(#thanks) h2.is-visible::after {
 .contact__form .submit {
   cursor: pointer;
   border: 1px var(--c-sep) solid;
+  border-radius: 1px;
   padding: 1em 0;
   font-size: var(--fs-base);
   letter-spacing: var(--ls-wide);
   font-weight: 500;
-  border-radius: 1px;
+  color: var(--c-accent);
   transition: border-color var(--t), color var(--t);
-
-  @media (max-width: 768px) {
-    color: var(--c-accent);
-  }
 }
 
 @media (hover: hover) {
   .contact__form .submit:hover {
     border-color: var(--c-accent);
-    color: var(--c-accent);
   }
 }
 
@@ -1040,6 +1036,7 @@ footer {
   font-size: var(--fs-lg);
   letter-spacing: var(--ls-logo);
   line-height: 1;
+  color: var(--c-accent);
 }
 
 .footer-nav {
