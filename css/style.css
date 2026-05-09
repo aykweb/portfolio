@@ -591,11 +591,17 @@ section:not(#thanks) h2.is-visible::after {
   box-shadow: 2px 4px 12px rgb(0 0 0 / 0.12);
   opacity: 0;
   margin-top: 3rem;
-  transition: opacity 0.5s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .about__photo.is-visible {
   opacity: 1;
+}
+
+@media(hover:hover){
+  .about__photo.about__photo.is-visible:hover{
+    transform: skew(5deg, 5deg);
+  }
 }
 
 /* --------------- works --------------- */
